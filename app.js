@@ -8,8 +8,9 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket)=>{
- console.log("socket here")
+
 socket.on(("connected"),(data)=>{
+ 
   socket.broadcast.emit("UserJoined",data);
   
 })
